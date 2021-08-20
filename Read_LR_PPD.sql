@@ -29,11 +29,11 @@ CREATE TABLE pricepaid
   recordstatus text
 )
 
-COPY pricepaid1 FROM 'D:/pp-complete.csv' DELIMITERS ',' CSV QUOTE '"'
+COPY pricepaid FROM program 'cmd /c "type D:\R\matchcasa1\pp-complete.csv"' DELIMITERS ',' CSV QUOTE '"'
 ##Query returned successfully: 24852949 rows affected, 04:01 minutes execution time.
 
 
 ALTER TABLE pricepaid ADD yearchi int;
 
 UPDATE pricepaid SET yearchi= date_part('year', dateoftransfer);
-#Query returned successfully: 24852949 rows affected, 08:41 minutes execution time.
+##Query returned successfully: 24852949 rows affected, 08:41 minutes execution time.
